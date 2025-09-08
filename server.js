@@ -103,3 +103,8 @@ app.put("/api/post/:id", (req, res) => {
 app.patch("/api/post/:id", (req, res) => {
   res.send("Modifica parzialmente il post con id:" + req.params.id);
 });
+
+//delete (D)
+app.delete("/api/post/:id", (req, res) => {
+  res.send("Rimuovi il post con id:" + req.params.id);
+});
