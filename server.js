@@ -90,3 +90,13 @@ app.get("/api/post/:id", (req, res) => {
 });
 
 //store (C) creazione
+app.post("/api/post", (req, res) => {
+  res.send("Crea il nuovo post");
+});
+
+//update (U) Aggiorna completamente il singolo post esistente
+app.put("/api/post/:id", (req, res) => {
+  res.send("Aggiorna il post con id:" + req.params.id);
+});
+
+// modify (U) modifica parziale del post
