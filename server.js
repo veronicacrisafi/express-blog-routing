@@ -71,12 +71,12 @@ const post = [
   },
 ];
 
-//index (R)
+//index (R) recupera la lista di tutti i post
 app.get("/api/post", (req, res) => {
   res.json(post);
 });
 
-//show (R)
+//show (R) recupera un singolo post tramite il suo id
 app.get("/api/post/:id", (req, res) => {
   const { id } = req.params;
   const ricercaDelPost = post.find((postEl) => postEl.id === parseInt(id));
@@ -89,7 +89,7 @@ app.get("/api/post/:id", (req, res) => {
   res.json(ricercaDelPost);
 });
 
-//store (C) creazione
+//Create (C) creazione di un nuovo post
 app.post("/api/post", (req, res) => {
   res.send("Crea il nuovo post");
 });
@@ -100,3 +100,6 @@ app.put("/api/post/:id", (req, res) => {
 });
 
 // modify (U) modifica parziale del post
+app.patch("/api/post/:id", (req, res) => {
+  res.send("Modifica parzialmente il post con id:" + req.params.id);
+});
