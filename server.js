@@ -73,6 +73,7 @@ const post = [
 
 //index (R) recupera la lista di tutti i post
 app.get("/api/post", (req, res) => {
+  //res.send(post);
   res.json(post);
 });
 
@@ -86,7 +87,8 @@ app.get("/api/post/:id", (req, res) => {
       message: "resource not found",
     });
   }
-  res.json(ricercaDelPost);
+  res.send(ricercaDelPost);
+  // res.json(ricercaDelPost);
 });
 
 //Create (C) creazione di un nuovo post
